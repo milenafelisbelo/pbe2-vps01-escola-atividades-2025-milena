@@ -35,18 +35,19 @@ Desenvolver as funcionalidades conforme requisitos
 - Insomnia
 
 ## Passo a Passo de como executar a API
-1. Instale as dependências
+
+### 1. Instale as dependências
 Clone o repositório
 https://github.com/milenafelisbelo/pbe2-vps01-escola-atividades-2025-milena.git
 
-2. Abra o XAMPP Control Panel e inicie o MySQL
+### 2. Abra o XAMPP Control Panel e inicie o MySQL
 
-3. Abra com o repositorio com VsCode
+### 3. Abra com o repositorio com VsCode
 
-4. Crie o arquivo .env na pasta API e adicione a variáveis de ambiente
+### 4. Crie o arquivo .env na pasta API e adicione a variáveis de ambiente
 DATABASE_URL="mysql://root@localhost:3306/escola?schema=public&timezone=UTC"
 
-5. Abra o terminal, navegue até a pasta API e execute os comandos
+### 5. Abra o terminal, navegue até a pasta API e execute os comandos
 Dentro da pasta API, execute os seguintes comandos:
 Instale as dependências do projeto:
 npm install
@@ -55,13 +56,13 @@ npx prisma generate
 #ou
 prisma generate
 
-Inicie o servidor
-Para iniciar o servidor da API, use o comando:
+### Inicie o servidor
+- Para iniciar o servidor da API, use o comando:
 nodemon
 
-6. Testar no Insominia
-Para testar utilize:
-Read
-Create
-UpDate
-Delete
+### 6. Testar no Insominia
+- Para testar utilize:
+- Read
+- Create
+- UpDate
+- Delete

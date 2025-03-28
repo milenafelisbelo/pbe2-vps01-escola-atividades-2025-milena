@@ -95,4 +95,6 @@ const calcularParcial = async (req, res) => {
     }
 }
 
-module.exports = { create, read, readOne, update, remove, calcularParcial };
+module.exports = { create, read, readOne, update, remove, calcularParcial 
+    
+};
