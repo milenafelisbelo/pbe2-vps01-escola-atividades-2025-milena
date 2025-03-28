@@ -57,4 +57,42 @@ const remove = async (req, res) => {
     }
 }
 
-module.exports = { create, read, readOne, update, remove };
+const calcularParcial = async (req, res) => {
+    try {
+        const atividade = await prisma.atividade.findUnique({
+            where: {
+                id: parseInt(req.params.id)
+            }
+        });
+
+        if (!atividade) {
+            return res.status(404).json({ error: 'Atividade não encontrada' });
+        }
+
+       
+        const parcial = atividade.nota !== null && atividade.peso !== null
+            ? atividade.nota * atividade.peso
+            : null;
+
+        const atividadeAtualizada = await prisma.atividade.update({
+            where: {
+                id: parseInt(req.params.id)
+            },
+            data: {
+                parcial
+            }
+        });
+
+        return res.json({
+            parcialCalculado: parcial,
+            atividade: atividadeAtualizada
+        });
+    } catch (error) {
+        return res.status(400).json({ 
+            error: 'Erro ao calcular parcial',
+            details: error.message 
+        });
+    }
+}
+
+module.exports = { create, read, readOne, update, remove, calcularParcial };
